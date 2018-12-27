@@ -14,46 +14,44 @@ public class BST<E extends Comparable<E>> {
     private Node root;
     private int size;
 
-    public BST(){
+    public BST() {
         root = null;
         size = 0;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
     // 向二分搜索树中添加新的元素e
-    public void add(E e){
+    public void add(E e) {
 
-        if(root == null){
+        if (root == null) {
             root = new Node(e);
-            size ++;
-        }
-        else
+            size++;
+        } else
             add(root, e);
     }
 
     // 向以node为根的二分搜索树中插入元素e，递归算法
-    private void add(Node node, E e){
-        if(e.equals(node.e))
+    private void add(Node node, E e) {
+        if (e.equals(node.e))
             return;
-        else if(e.compareTo(node.e) < 0 && node.left == null){
+        else if (e.compareTo(node.e) < 0 && node.left == null) {
             node.left = new Node(e);
-            size ++;
+            size++;
             return;
-        }
-        else if(e.compareTo(node.e) > 0 && node.right == null){
+        } else if (e.compareTo(node.e) > 0 && node.right == null) {
             node.right = new Node(e);
-            size ++;
+            size++;
             return;
         }
 
-        if(e.compareTo(node.e) < 0)
+        if (e.compareTo(node.e) < 0)
             add(node.left, e);
         else //e.compareTo(node.e) > 0
             add(node.right, e);
