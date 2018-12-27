@@ -5,13 +5,13 @@ class Solution4 {
 
     public ListNode removeElements(ListNode head, int val) {
 
-        if(head == null)
+        if (head == null)
             return head;
 
         ListNode res = removeElements(head.next, val);
-        if(head.val == val)
+        if (head.val == val)
             return res;
-        else{
+        else {
             head.next = res;
             return head;
         }

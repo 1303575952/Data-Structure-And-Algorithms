@@ -5,7 +5,7 @@ class Solution5 {
 
     public ListNode removeElements(ListNode head, int val) {
 
-        if(head == null)
+        if (head == null)
             return head;
 
         head.next = removeElements(head.next, val);
