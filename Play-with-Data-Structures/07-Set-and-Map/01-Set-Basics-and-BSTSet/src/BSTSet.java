@@ -2,32 +2,32 @@ public class BSTSet<E extends Comparable<E>> implements Set<E> {
 
     private BST<E> bst;
 
-    public BSTSet(){
+    public BSTSet() {
         bst = new BST<>();
     }
 
     @Override
-    public int getSize(){
+    public int getSize() {
         return bst.size();
     }
 
     @Override
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return bst.isEmpty();
     }
 
     @Override
-    public void add(E e){
+    public void add(E e) {
         bst.add(e);
     }
 
     @Override
-    public boolean contains(E e){
+    public boolean contains(E e) {
         return bst.contains(e);
     }
 
     @Override
-    public void remove(E e){
+    public void remove(E e) {
         bst.remove(e);
     }
 }
