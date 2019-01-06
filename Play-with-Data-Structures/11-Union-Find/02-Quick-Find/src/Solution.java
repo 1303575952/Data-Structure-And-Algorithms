@@ -3,13 +3,16 @@
 ///
 /// 课程中在这里暂时没有介绍这个问题
 /// 该代码主要用于使用Leetcode上的问题测试我们的UF类
+
 import java.util.TreeSet;
 
 class Solution {
 
     private interface UF {
         int getSize();
+
         boolean isConnected(int p, int q);
+
         void unionElements(int p, int q);
     }
 
@@ -28,14 +31,14 @@ class Solution {
         }
 
         @Override
-        public int getSize(){
+        public int getSize() {
             return id.length;
         }
 
         // 查找元素p所对应的集合编号
         // O(1)复杂度
         private int find(int p) {
-            if(p < 0 || p >= id.length)
+            if (p < 0 || p >= id.length)
                 throw new IllegalArgumentException("p is out of bound.");
 
             return id[p];
@@ -70,13 +73,13 @@ class Solution {
 
         int n = M.length;
         UnionFind1 uf = new UnionFind1(n);
-        for(int i = 0 ; i < n ; i ++)
-            for(int j = 0 ; j < i ; j ++)
-                if(M[i][j] == 1)
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < i; j++)
+                if (M[i][j] == 1)
                     uf.unionElements(i, j);
 
         TreeSet<Integer> set = new TreeSet<>();
-        for(int i = 0 ; i < n ; i ++)
+        for (int i = 0; i < n; i++)
             set.add(uf.find(i));
         return set.size();
     }
