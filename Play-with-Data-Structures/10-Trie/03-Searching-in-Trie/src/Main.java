@@ -7,15 +7,15 @@ public class Main {
         System.out.println("Pride and Prejudice");
 
         ArrayList<String> words = new ArrayList<>();
-        if(FileOperation.readFile("pride-and-prejudice.txt", words)){
+        if (FileOperation.readFile("pride-and-prejudice.txt", words)) {
 
             long startTime = System.nanoTime();
 
             BSTSet<String> set = new BSTSet<>();
-            for(String word: words)
+            for (String word : words)
                 set.add(word);
 
-            for(String word: words)
+            for (String word : words)
                 set.contains(word);
 
             long endTime = System.nanoTime();
@@ -30,10 +30,10 @@ public class Main {
             startTime = System.nanoTime();
 
             Trie trie = new Trie();
-            for(String word: words)
+            for (String word : words)
                 trie.add(word);
 
-            for(String word: words)
+            for (String word : words)
                 trie.contains(word);
 
             endTime = System.nanoTime();
