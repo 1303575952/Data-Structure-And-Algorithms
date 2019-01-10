@@ -19,78 +19,78 @@ public class Solution {
         private int size;
         private int M;
 
-        public HashTable(int M){
+        public HashTable(int M) {
             this.M = M;
             size = 0;
             hashtable = new TreeMap[M];
-            for(int i = 0 ; i < M ; i ++)
+            for (int i = 0; i < M; i++)
                 hashtable[i] = new TreeMap<>();
         }
 
-        public HashTable(){
+        public HashTable() {
             this(initCapacity);
         }
 
-        private int hash(K key){
+        private int hash(K key) {
             return (key.hashCode() & 0x7fffffff) % M;
         }
 
-        public int getSize(){
+        public int getSize() {
             return size;
         }
 
-        public void add(K key, V value){
+        public void add(K key, V value) {
             TreeMap<K, V> map = hashtable[hash(key)];
-            if(map.containsKey(key))
+            if (map.containsKey(key))
                 map.put(key, value);
-            else{
+            else {
                 map.put(key, value);
-                size ++;
+                size++;
 
-                if(size >= upperTol * M)
+                if (size >= upperTol * M)
                     resize(2 * M);
             }
         }
 
-        public V remove(K key){
+        public V remove(K key) {
             V ret = null;
             TreeMap<K, V> map = hashtable[hash(key)];
-            if(map.containsKey(key)){
+            if (map.containsKey(key)) {
                 ret = map.remove(key);
-                size --;
+                size--;
 
-                if(size < lowerTol * M && M / 2 >= initCapacity)
+                if (size < lowerTol * M && M / 2 >= initCapacity)
                     resize(M / 2);
             }
             return ret;
         }
 
-        public void set(K key, V value){
+        public void set(K key, V value) {
             TreeMap<K, V> map = hashtable[hash(key)];
-            if(!map.containsKey(key))
+            if (!map.containsKey(key))
                 throw new IllegalArgumentException(key + " doesn't exist!");
 
             map.put(key, value);
         }
 
-        public boolean contains(K key){
+        public boolean contains(K key) {
             return hashtable[hash(key)].containsKey(key);
         }
 
-        public V get(K key){
+        public V get(K key) {
             return hashtable[hash(key)].get(key);
         }
 
-        private void resize(int newM){
+        private void resize(int newM) {
             TreeMap<K, V>[] newHashTable = new TreeMap[newM];
-            for(int i = 0 ; i < newM ; i ++)
+            for (int i = 0; i < newM; i++)
                 newHashTable[i] = new TreeMap<>();
 
             int oldM = M;
             this.M = newM;
-            for(int i = 0 ; i < oldM ; i ++){
+            for (int i = 0; i < oldM; i++) {
                 TreeMap<K, V> map = hashtable[i];
-                for(K key: map.keySet())
+                for (K key : map.keySet())
                     newHashTable[hash(key)].put(key, map.get(key));
             }
 
@@ -101,25 +101,25 @@ public class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
 
         HashTable<Integer, Integer> map = new HashTable<>();
-        for(int num: nums1){
-            if(!map.contains(num))
+        for (int num : nums1) {
+            if (!map.contains(num))
                 map.add(num, 1);
             else
                 map.set(num, map.get(num) + 1);
         }
 
         ArrayList<Integer> res = new ArrayList<>();
-        for(int num: nums2){
-            if(map.contains(num)){
+        for (int num : nums2) {
+            if (map.contains(num)) {
                 res.add(num);
                 map.set(num, map.get(num) - 1);
-                if(map.get(num) == 0)
+                if (map.get(num) == 0)
                     map.remove(num);
             }
         }
 
         int[] ret = new int[res.size()];
-        for(int i = 0 ; i < res.size() ; i ++)
+        for (int i = 0; i < res.size(); i++)
             ret[i] = res.get(i);
 
         return ret;
