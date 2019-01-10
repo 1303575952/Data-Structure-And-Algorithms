@@ -5,7 +5,7 @@ public class Student {
     String firstName;
     String lastName;
 
-    Student(int grade, int cls, String firstName, String lastName){
+    Student(int grade, int cls, String firstName, String lastName) {
         this.grade = grade;
         this.cls = cls;
         this.firstName = firstName;
@@ -13,30 +13,30 @@ public class Student {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
 
         int B = 31;
         int hash = 0;
-        hash = hash * B + ((Integer)grade).hashCode();
-        hash = hash * B + ((Integer)cls).hashCode();
+        hash = hash * B + ((Integer) grade).hashCode();
+        hash = hash * B + ((Integer) cls).hashCode();
         hash = hash * B + firstName.toLowerCase().hashCode();
         hash = hash * B + lastName.toLowerCase().hashCode();
         return hash;
     }
 
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
 
-        if(this == o)
+        if (this == o)
             return true;
 
-        if(o == null)
+        if (o == null)
             return false;
 
-        if(getClass() != o.getClass())
+        if (getClass() != o.getClass())
             return false;
 
-        Student another = (Student)o;
+        Student another = (Student) o;
         return this.grade == another.grade &&
                 this.cls == another.cls &&
                 this.firstName.toLowerCase().equals(another.firstName.toLowerCase()) &&
