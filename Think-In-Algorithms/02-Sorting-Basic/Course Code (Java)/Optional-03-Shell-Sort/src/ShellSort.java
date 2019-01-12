@@ -14,7 +14,7 @@ public class ShellSort {
         while (h < n / 3) {
             h = 3 * h + 1;
         }
-        
+
         while (h >= 1) {
 
             // h-sort the array
