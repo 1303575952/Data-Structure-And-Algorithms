@@ -1,24 +1,22 @@
-package bobo.algo;
-
-import java.util.*;
-
-public class SelectionSort{
+public class SelectionSort {
 
     // 我们的算法类不允许产生任何实例
-    private SelectionSort(){}
+    private SelectionSort() {
 
-    public static void sort(Comparable[] arr){
+    }
+
+    public static void sort(Comparable[] arr) {
 
         int n = arr.length;
-        for( int i = 0 ; i < n ; i ++ ){
+        for (int i = 0; i < n; i++) {
             // 寻找[i, n)区间里的最小值的索引
             int minIndex = i;
-            for( int j = i + 1 ; j < n ; j ++ )
+            for (int j = i + 1; j < n; j++)
                 // 使用compareTo方法比较两个Comparable对象的大小
-                if( arr[j].compareTo( arr[minIndex] ) < 0 )
+                if (arr[j].compareTo(arr[minIndex]) < 0)
                     minIndex = j;
 
-            swap( arr , i , minIndex);
+            swap(arr, i, minIndex);
         }
     }
 
@@ -33,7 +31,7 @@ public class SelectionSort{
 
         int N = 10000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("bobo.algo.SelectionSort", arr);
+        SortTestHelper.testSort("SelectionSort", arr);
 
         return;
     }
