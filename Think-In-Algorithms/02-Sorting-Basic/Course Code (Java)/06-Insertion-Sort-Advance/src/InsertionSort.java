@@ -1,7 +1,3 @@
-package bobo.algo;
-
-import java.util.*;
-
 public class InsertionSort{
 
     // 我们的算法类不允许产生任何实例
@@ -46,7 +42,7 @@ public class InsertionSort{
 
         int N = 20000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("bobo.algo.InsertionSort", arr);
+        SortTestHelper.testSort("InsertionSort", arr);
 
         return;
     }
