@@ -1,5 +1,3 @@
-package bobo.algo;
-
 import java.util.Arrays;
 
 public class Main {
@@ -18,10 +16,10 @@ public class Main {
         Integer[] arr3 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr4 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("bobo.algo.SelectionSort", arr1);
-        SortTestHelper.testSort("bobo.algo.InsertionSort", arr2);
-        SortTestHelper.testSort("bobo.algo.BubbleSort", arr3);
-        SortTestHelper.testSort("bobo.algo.ShellSort", arr4);
+        SortTestHelper.testSort("SelectionSort", arr1);
+        SortTestHelper.testSort("InsertionSort", arr2);
+        SortTestHelper.testSort("BubbleSort", arr3);
+        SortTestHelper.testSort("ShellSort", arr4);
 
         System.out.println();
 
@@ -35,10 +33,10 @@ public class Main {
         arr3 = Arrays.copyOf(arr1, arr1.length);
         arr4 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("bobo.algo.SelectionSort", arr1);
-        SortTestHelper.testSort("bobo.algo.InsertionSort", arr2);
-        SortTestHelper.testSort("bobo.algo.BubbleSort", arr3);
-        SortTestHelper.testSort("bobo.algo.ShellSort", arr4);
+        SortTestHelper.testSort("SelectionSort", arr1);
+        SortTestHelper.testSort("InsertionSort", arr2);
+        SortTestHelper.testSort("BubbleSort", arr3);
+        SortTestHelper.testSort("ShellSort", arr4);
 
         return;
     }
