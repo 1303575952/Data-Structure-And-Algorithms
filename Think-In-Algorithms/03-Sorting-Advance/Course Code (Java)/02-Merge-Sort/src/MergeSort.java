@@ -1,11 +1,11 @@
-package bobo.algo;
-
 import java.util.*;
 
 public class MergeSort{
 
     // 我们的算法类不允许产生任何实例
-    private MergeSort(){}
+    private MergeSort(){
+
+    }
 
     // 将arr[l...mid]和arr[mid+1...r]两部分进行归并
     private static void merge(Comparable[] arr, int l, int mid, int r) {
@@ -58,7 +58,7 @@ public class MergeSort{
         // 否则，你就见识了O(n^2)的算法和O(nlogn)算法的本质差异：）
         int N = 1000000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("bobo.algo.MergeSort", arr);
+        SortTestHelper.testSort("MergeSort", arr);
 
         return;
     }

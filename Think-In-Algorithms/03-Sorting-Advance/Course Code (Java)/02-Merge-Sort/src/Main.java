@@ -1,5 +1,3 @@
-package bobo.algo;
-
 import java.util.Arrays;
 
 public class Main {
@@ -16,8 +14,8 @@ public class Main {
         Integer[] arr1 = SortTestHelper.generateRandomArray(N, 0, N);
         Integer[] arr2 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("bobo.algo.InsertionSort", arr1);
-        SortTestHelper.testSort("bobo.algo.MergeSort", arr2);
+        SortTestHelper.testSort("InsertionSort", arr1);
+        SortTestHelper.testSort("MergeSort", arr2);
 
         System.out.println();
 
@@ -34,8 +32,8 @@ public class Main {
         arr1 = SortTestHelper.generateNearlyOrderedArray(N, swapTimes);
         arr2 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("bobo.algo.InsertionSort", arr1);
-        SortTestHelper.testSort("bobo.algo.MergeSort", arr2);
+        SortTestHelper.testSort("InsertionSort", arr1);
+        SortTestHelper.testSort("MergeSort", arr2);
 
         return;
     }
