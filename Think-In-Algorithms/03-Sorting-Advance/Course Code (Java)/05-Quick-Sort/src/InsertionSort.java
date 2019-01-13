@@ -1,33 +1,31 @@
-package bobo.algo;
-
-import java.util.*;
-
-public class InsertionSort{
+public class InsertionSort {
 
     // 我们的算法类不允许产生任何实例
-    private InsertionSort(){}
+    private InsertionSort() {
+
+    }
 
     // 对整个arr数组使用InsertionSort排序
-    public static void sort(Comparable[] arr){
+    public static void sort(Comparable[] arr) {
 
         int n = arr.length;
         for (int i = 0; i < n; i++) {
             Comparable e = arr[i];
             int j = i;
-            for( ; j > 0 && arr[j-1].compareTo(e) > 0 ; j--)
-                arr[j] = arr[j-1];
+            for (; j > 0 && arr[j - 1].compareTo(e) > 0; j--)
+                arr[j] = arr[j - 1];
             arr[j] = e;
         }
     }
 
     // 对arr[l...r]的区间使用InsertionSort排序
-    public static void sort(Comparable[] arr, int l, int r){
+    public static void sort(Comparable[] arr, int l, int r) {
 
-        for( int i = l + 1 ; i <= r ; i ++ ){
+        for (int i = l + 1; i <= r; i++) {
             Comparable e = arr[i];
             int j = i;
-            for( ; j > l && arr[j-1].compareTo(e) > 0 ; j--)
-                arr[j] = arr[j-1];
+            for (; j > l && arr[j - 1].compareTo(e) > 0; j--)
+                arr[j] = arr[j - 1];
             arr[j] = e;
         }
     }
@@ -43,7 +41,7 @@ public class InsertionSort{
 
         int N = 10000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("bobo.algo.InsertionSort", arr);
+        SortTestHelper.testSort("InsertionSort", arr);
 
         return;
     }
