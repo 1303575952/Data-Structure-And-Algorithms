@@ -2,7 +2,7 @@ public class QuickSort {
 
     // 我们的算法类不允许产生任何实例
     private QuickSort() {
-        
+
     }
 
     // 对arr[l...r]部分进行partition操作
