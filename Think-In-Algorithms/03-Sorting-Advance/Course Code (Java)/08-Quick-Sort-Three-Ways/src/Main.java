@@ -1,5 +1,3 @@
-package bobo.algo;
-
 import java.util.Arrays;
 
 public class Main {
@@ -20,9 +18,9 @@ public class Main {
         Integer[] arr2 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr3 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("bobo.algo.MergeSort", arr1);
-        SortTestHelper.testSort("bobo.algo.QuickSort2Ways", arr2);
-        SortTestHelper.testSort("bobo.algo.QuickSort3Ways", arr3);
+        SortTestHelper.testSort("MergeSort", arr1);
+        SortTestHelper.testSort("QuickSort2Ways", arr2);
+        SortTestHelper.testSort("QuickSort3Ways", arr3);
 
         System.out.println();
 
@@ -37,9 +35,9 @@ public class Main {
         arr2 = Arrays.copyOf(arr1, arr1.length);
         arr3 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("bobo.algo.MergeSort", arr1);
-        SortTestHelper.testSort("bobo.algo.QuickSort2Ways", arr2);
-        SortTestHelper.testSort("bobo.algo.QuickSort3Ways", arr3);
+        SortTestHelper.testSort("MergeSort", arr1);
+        SortTestHelper.testSort("QuickSort2Ways", arr2);
+        SortTestHelper.testSort("QuickSort3Ways", arr3);
 
         System.out.println();
 
@@ -51,9 +49,9 @@ public class Main {
         arr2 = Arrays.copyOf(arr1, arr1.length);
         arr3 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("bobo.algo.MergeSort", arr1);
-        SortTestHelper.testSort("bobo.algo.QuickSort2Ways", arr2);
-        SortTestHelper.testSort("bobo.algo.QuickSort3Ways", arr3);
+        SortTestHelper.testSort("MergeSort", arr1);
+        SortTestHelper.testSort("QuickSort2Ways", arr2);
+        SortTestHelper.testSort("QuickSort3Ways", arr3);
 
 
         return;

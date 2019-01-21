@@ -1,7 +1,3 @@
-package bobo.algo;
-
-import java.util.*;
-
 public class QuickSort3Ways {
 
     // 我们的算法类不允许产生任何实例
@@ -64,7 +60,7 @@ public class QuickSort3Ways {
         // 可以在1秒之内轻松处理100万数量级的数据
         int N = 1000000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("bobo.algo.QuickSort3Ways", arr);
+        SortTestHelper.testSort("QuickSort3Ways", arr);
 
         return;
     }

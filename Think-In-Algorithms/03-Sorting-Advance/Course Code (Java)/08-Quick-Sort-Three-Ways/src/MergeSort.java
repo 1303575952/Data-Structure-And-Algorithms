@@ -1,5 +1,3 @@
-package bobo.algo;
-
 import java.util.*;
 
 public class MergeSort{
@@ -64,7 +62,7 @@ public class MergeSort{
         // 否则，你就见识了O(n^2)的算法和O(nlogn)算法的本质差异：）
         int N = 1000000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("bobo.algo.MergeSort", arr);
+        SortTestHelper.testSort("MergeSort", arr);
 
         return;
     }

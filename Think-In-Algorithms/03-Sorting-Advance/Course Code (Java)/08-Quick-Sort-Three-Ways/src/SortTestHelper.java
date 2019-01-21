@@ -1,5 +1,3 @@
-package bobo.algo;
-
 import java.lang.reflect.Method;
 import java.lang.Class;
 import java.util.Random;
